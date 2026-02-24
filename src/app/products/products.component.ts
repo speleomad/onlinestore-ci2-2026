@@ -8,10 +8,15 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: Product[] = [];
-  constructor(private productService: ProductService) { }
+  products!:Product[];
+  constructor(private prodductService:ProductService){}
+  
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+     this.products=this.prodductService.getProducts();  
   }
+
+  onProductDeleted(id: number) {
+    this.products = this.products.filter(product => product.id !== id);
+  } 
 
 }
