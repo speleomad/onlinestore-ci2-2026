@@ -8,6 +8,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +19,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ProductDetailsComponent,
     HomeComponent,
     SigninComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

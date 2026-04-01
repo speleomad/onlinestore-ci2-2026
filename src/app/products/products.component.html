@@ -1,11 +1,13 @@
-
+<div class="mt-2 mb-4">
+    <button class="btn btn-success" (click)="onAddProduct()">
+         Add Product
+    </button>
+</div>
 <div  class="row" *ngIf="products.length>0; else noProducts">
-    <div class="col-md-3"  *ngFor="let product of products"> 
-            <app-product-details [product]="product" 
-                                 (productDeleted)="onProductDeleted($event)">
-            </app-product-details>    
+    <div class="col-md-3"  *ngFor="let product of products">
+            <app-product-details [product]="product" (productDeleted)="onProductDeleted($event)"></app-product-details>     
     </div>
 </div>
 <ng-template #noProducts>
-    <div class="alert alert-danger"> No product found!</div>
+    <div class="alert alert-warning"> No product found</div>
 </ng-template>
