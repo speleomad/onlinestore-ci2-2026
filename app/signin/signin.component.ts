@@ -10,10 +10,7 @@ export class SigninComponent implements OnInit {
   isAuth:boolean=false; 
  constructor(private authService: AuthService){}
  ngOnInit(): void {
-  this.authService.authSubject.subscribe({
-    next:(isAuth:boolean)=> this.isAuth=isAuth
-  });
-  this.authService.emitAuthSubject();
+     this.isAuth=this.authService.isAuthenticated()
  }
  onSignIn():void{
    this.authService.signIn();
